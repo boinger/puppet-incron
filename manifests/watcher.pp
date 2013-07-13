@@ -2,12 +2,13 @@ define incron::watcher (
   $ensure = present,
   $loction,
   $mask,
-  $action,
+  $action
 ) {
+
   include incron
 
-  file{ "/etc/incron.d/${name}":
-    ensure  => $ensure,
+  file { "/etc/incron.d/${name}":
+    ensure  => "${ensure}",
     content => "${location} ${mask} ${action}",
     require => Package['incron'],
     notify  => Service['incrond'];
