@@ -1,4 +1,4 @@
-define incron::watcher($ensure = present, $loction, $mask, $action) {
+define incron::watcher($ensure = present, $location, $mask, $action) {
 
   include incron
 
